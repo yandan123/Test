@@ -55,7 +55,7 @@
     [comp setMonth:04];
     [comp setDay:10];
     [comp setYear:2016];
-    NSCalendar *myCal = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *myCal = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDate *myDate1 = [myCal dateFromComponents:comp];
 
     
