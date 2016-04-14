@@ -32,9 +32,11 @@
     CustomNavigationViewController *nav1 = [[CustomNavigationViewController alloc] initWithRootViewController:first];
     
     nav1.tabBarItem.title = @"项目一";
+    nav1.tabBarItem.image = [UIImage imageNamed:@"tabone"];
     nav1.tabBarItem.badgeValue = date1;
     
     ViewController2* second = [[ViewController2 alloc]init];
+    second.tabBarItem.image = [UIImage imageNamed:@"tabtwo"];
     second.tabBarItem.title = @"项目二";
     
     tabBarViewController = [[UITabBarController alloc] init];

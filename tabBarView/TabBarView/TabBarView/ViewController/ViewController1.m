@@ -23,7 +23,7 @@
     labelItem.textAlignment = NSTextAlignmentCenter;
     [self.navigationItem setTitleView:labelItem];
     
-    TableView1 *firstTable = [[TableView1 alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width-20, self.view.frame.size.height-150) style:UITableViewStylePlain];
+    TableView1 *firstTable = [[TableView1 alloc] initWithFrame:CGRectMake(0, 80, KScreenWidth-20, KScreenHeight-150) style:UITableViewStylePlain];
 
     [self.view addSubview:firstTable];
     
