@@ -30,10 +30,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"firstCell"];
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"secondCell"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"firstCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"secondCell"];
         [cell setBackgroundColor:[UIColor whiteColor]];
         
     }

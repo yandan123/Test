@@ -1,5 +1,5 @@
 //
-//  TableView.h
+//  CustomTableView.h
 //  TabBarView
 //
 //  Created by 严丹 on 16/4/14.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableView1 : UITableView
-<UITableViewDataSource,UITableViewDelegate>
+@interface CustomTableView : UITableView
 
 @end

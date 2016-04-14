@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TableView2 : UITableView
+#import "CustomTableView.h"
+@interface TableView2 :CustomTableView
 <UITableViewDataSource,UITableViewDelegate>
 @end

@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController1.h"
-#import "ViewController2.h"
-#import "NSDate＋Utility.h"
+
 @interface AppDelegate ()
 {
     UITabBarController* tabBarViewController;
@@ -31,7 +29,7 @@
     NSString * date1 = [NSString stringWithFormat:@"%zi",date];
     
     ViewController1 *first = [[ViewController1 alloc]init];
-    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:first];
+    CustomNavigationViewController *nav1 = [[CustomNavigationViewController alloc] initWithRootViewController:first];
     
     nav1.tabBarItem.title = @"项目一";
     nav1.tabBarItem.badgeValue = date1;

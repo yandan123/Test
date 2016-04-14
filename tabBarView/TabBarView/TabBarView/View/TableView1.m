@@ -39,6 +39,15 @@
     }
     
     [cell.textLabel setText:[NSString stringWithFormat:@"day%02zi",indexPath.row+1]];
+    
+    if (indexPath.row + 1 == 4) {
+        [cell.textLabel setText:[NSString stringWithFormat:@"day%02zi UIView UIControl",indexPath.row+1]];
+    }
+    
+    if (indexPath.row + 1 == 5) {
+        [cell.textLabel setText:[NSString stringWithFormat:@"day%02zi UIViewController",indexPath.row+1]];
+    }
+
     [cell.textLabel setTextColor:[UIColor blackColor]];
     return cell;
 

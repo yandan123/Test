@@ -1,0 +1,15 @@
+//
+//  Common.pch
+//  TabBarView
+//
+//  Created by 严丹 on 16/4/14.
+//  Copyright © 2016年 yandan. All rights reserved.
+//
+
+#import "Config.h"
+
+#define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
