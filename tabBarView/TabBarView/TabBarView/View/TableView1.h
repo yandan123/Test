@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol changeProtocol <NSObject>
+@optional
+- (void)changeView:(NSInteger)selectIndex;
+@end
 @interface TableView1 : UITableView
 <UITableViewDataSource,UITableViewDelegate>
 
+
+
+@property (nonatomic,assign)id <changeProtocol> changeDelegate;
 @end

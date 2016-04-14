@@ -8,7 +8,8 @@
 
 #import "ViewController1.h"
 #import "TableView1.h"
-@interface ViewController1 ()
+#import "FirstViewController.h"
+@interface ViewController1 ()<changeProtocol>
 
 @end
 
@@ -24,6 +25,7 @@
     [self.navigationItem setTitleView:labelItem];
     
     TableView1 *firstTable = [[TableView1 alloc] initWithFrame:CGRectMake(0, 80, KScreenWidth-20, KScreenHeight-150) style:UITableViewStylePlain];
+    firstTable.changeDelegate = self;
 
     [self.view addSubview:firstTable];
     
@@ -33,7 +35,22 @@
     [super didReceiveMemoryWarning];
     
 }
-
-
+- (void)changeView:(NSInteger)selectIndex{
+    if (selectIndex == 4) {
+        /* 自己手工创建一个FirstViewController对象
+         这个对象使用 FirstViewController作为 界面文件
+         nib就是xib的二进制文件 */
+        FirstViewController *fvc = [[FirstViewController alloc]
+                                    initWithNibName:@"FirstViewController" bundle:nil];
+        
+        /* 创建一个UINavigationController导航控制器
+         这个导航控制器里面initWithRootViewController就是
+         导航控制器的根视图控制对象  这里使用fvc来作为根视图控制器 */
+        CustomNavigationViewController *nav = [[CustomNavigationViewController alloc] initWithRootViewController:fvc];
+        
+        /*切换到FirstView界面*/
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+}
 
 @end
