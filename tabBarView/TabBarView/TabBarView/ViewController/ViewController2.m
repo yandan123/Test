@@ -7,20 +7,20 @@
 //
 
 #import "ViewController2.h"
+#import "TableView2.h"
 @interface ViewController2 ()
 
 @end
 
 @implementation ViewController2
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
-    label.text = @"second";
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:label];
     
+        TableView2 *firstTable = [[TableView2 alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width-20, self.view.frame.size.height-80) style:UITableViewStylePlain];
+    
+    [self.view addSubview:firstTable];
 }
 
 - (void)didReceiveMemoryWarning {

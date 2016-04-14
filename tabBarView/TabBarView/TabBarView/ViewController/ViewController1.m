@@ -7,6 +7,7 @@
 //
 
 #import "ViewController1.h"
+#import "TableView1.h"
 @interface ViewController1 ()
 
 @end
@@ -15,12 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
-    label.text = @"first";
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:label];
     
+    UILabel *labelItem = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
+    labelItem.text = @"日期";
+    labelItem.textColor = [UIColor blackColor];
+    labelItem.textAlignment = NSTextAlignmentCenter;
+    [self.navigationItem setTitleView:labelItem];
+    
+    TableView1 *firstTable = [[TableView1 alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width-20, self.view.frame.size.height-150) style:UITableViewStylePlain];
+
+    [self.view addSubview:firstTable];
     
 }
 

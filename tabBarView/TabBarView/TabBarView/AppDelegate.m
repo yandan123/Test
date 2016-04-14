@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController1.h"
 #import "ViewController2.h"
+#import "NSDate＋Utility.h"
 @interface AppDelegate ()
 {
     UITabBarController* tabBarViewController;
@@ -22,7 +23,26 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self createTarBal];
+    
+    NSDate * startDate = [NSDate dateFromString:@"2016-04-12 00:00:00"];
+    NSDate * nowDate = [NSDate date];
+    
+    NSInteger date = [NSDate calcDaysFromBegin:startDate end:nowDate];
+    NSString * date1 = [NSString stringWithFormat:@"%zi",date];
+    
+    ViewController1 *first = [[ViewController1 alloc]init];
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:first];
+    
+    nav1.tabBarItem.title = @"项目一";
+    nav1.tabBarItem.badgeValue = date1;
+    
+    ViewController2* second = [[ViewController2 alloc]init];
+    second.tabBarItem.title = @"项目二";
+    
+    tabBarViewController = [[UITabBarController alloc] init];
+    tabBarViewController.viewControllers = [NSArray arrayWithObjects:nav1,second, nil];
+    tabBarViewController.tabBar.backgroundColor = [UIColor orangeColor];
+    [self.window setRootViewController:tabBarViewController];
     
     [self.window makeKeyAndVisible];
     
@@ -50,50 +70,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-- (void)createTarBal{
-    NSDateComponents *comp = [[NSDateComponents alloc]init];
-    [comp setMonth:04];
-    [comp setDay:10];
-    [comp setYear:2016];
-    NSCalendar *myCal = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDate *myDate1 = [myCal dateFromComponents:comp];
 
-    
-    NSDate *nowDate = [NSDate date];
-   
-    
-    NSInteger date = [self calcDaysFromBegin:myDate1 end:nowDate];
-    NSString * date1 = [NSString stringWithFormat:@"%zi",date];
-    tabBarViewController = [[UITabBarController alloc]init];
-    [self.window setRootViewController:tabBarViewController];
-    
-    ViewController1 *first = [[ViewController1 alloc]init];
-    ViewController2* second = [[ViewController2 alloc]init];
-    tabBarViewController.viewControllers = [NSArray arrayWithObjects:first, second, nil];
-    tabBarViewController.tabBar.backgroundColor = [UIColor orangeColor];
-    first.tabBarItem.title = @"项目一";
-    
-    first.tabBarItem.badgeValue = date1;
-    second.tabBarItem.title = @"项目二";
-    second.tabBarItem.badgeValue = date1;
-}
 
--(NSInteger) calcDaysFromBegin:(NSDate *)inBegin end:(NSDate *)inEnd
-{
-    unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay ;
-    
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *comps = [cal components:unitFlags fromDate:inBegin];
-    NSDate *newBegin  = [cal dateFromComponents:comps];
-    
-    NSCalendar *cal2 = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *comps2 = [cal2 components:unitFlags fromDate:inEnd];
-    NSDate *newEnd  = [cal2 dateFromComponents:comps2];
-    
-    NSTimeInterval interval = [newEnd timeIntervalSinceDate:newBegin];
-    NSInteger beginDays=((NSInteger)interval)/(3600*24);
-    
-    return beginDays;
-}
 
 @end
