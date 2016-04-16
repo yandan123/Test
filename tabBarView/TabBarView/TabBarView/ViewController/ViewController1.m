@@ -47,7 +47,6 @@
          这个导航控制器里面initWithRootViewController就是
          导航控制器的根视图控制对象  这里使用fvc来作为根视图控制器 */
         CustomNavigationViewController *nav = [[CustomNavigationViewController alloc] initWithRootViewController:fvc];
-        
         /*切换到FirstView界面*/
         [self presentViewController:nav animated:YES completion:nil];
     }

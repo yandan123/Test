@@ -1,9 +1,9 @@
 //
 //  MyProtocol.h
-//  HelloWorld
+//  TabBarView
 //
-//  Created by ZhangBo on 11-12-10.
-//  Copyright 2011年 ... All rights reserved.
+//  Created by 严丹 on 16/4/15.
+//  Copyright © 2016年 yandan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,9 +11,9 @@
 
 @protocol MyProtocol <NSObject>
 
-@required
+@required//必须实现的方法
 - (void) setSelectStr:(NSString *)str;
-@optional
+@optional//可以不实现的方法
 - (void) setSelectStr2:(NSString *)str;
 
 @end
